@@ -2,17 +2,21 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace OOP_Lab4
+namespace TripManager
 {
+    // 🔹 Клас-композиція — зберігає та обробляє поїздки
     public class TripManager
     {
+        // Список поїздок (композиція: Transport є частиною TripManager)
         private readonly List<(Transport transport, int passengers, double distance)> _trips = new();
 
+        // Додає поїздку до списку
         public void AddTrip(Transport transport, int passengers, double distance)
         {
             _trips.Add((transport, passengers, distance));
         }
 
+        // Виводить усі поїздки та обчислює загальну/середню вартість
         public void PrintReport()
         {
             Console.WriteLine("🚗 Звіт по поїздках:\n");
